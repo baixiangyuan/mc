@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寰宇航空 - EFB 电子飞行包</title>
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/pic/logo.JPG" rel="icon">
+</head>
+<body>
+    <div class="global-grid"></div>
+
+    <!-- 导航栏（与全站一致） -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="/index.html" class="nav-logo">
+                <span class="nav-logo-text">寰宇航空<small>Unisky Airways</small></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/index.html">首页</a></li>
+                <li><a href="/index.html#services">核心服务</a></li>
+                <li><a href="efb.html" class="active">EFB 飞行包</a></li>
+                <li><a href="/index.html#resources">资源库</a></li>
+                <li><a href="https://www.kyfly.online" class="nav-cta">连接服务器</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- EFB 主面板 -->
+    <div class="efb-dashboard">
+        <div class="section-header">
+            <span class="section-label">🛫 电子飞行包</span>
+            <h2 class="section-title">EFB 功能中心</h2>
+            <p class="section-desc">选择你需要使用的飞行工具</p>
+        </div>
+
+        <div class="efb-grid">
+            <!-- 航图查询入口 -->
+            <a href="chart.html" class="efb-card card-hover">
+                <div class="efb-card-icon">🗺️</div>
+                <h3>航图查询</h3>
+                <p>输入 ICAO 代码，查看机场航图与进离场程序</p>
+            </a>
+
+            <!-- 天气查询入口（待创建） -->
+            <a href="/weather/weather.html" class="efb-card card-hover">
+                <div class="efb-card-icon">🌤️</div>
+                <h3>天气查询</h3>
+                <p>获取机场实时气象信息、高空风图与预报</p>
+            </a>
+
+            <!-- 预定飞行入口（待创建） -->
+            <a href="/booking/booking.html" class="efb-card card-hover">
+                <div class="efb-card-icon">✈️</div>
+                <h3>预定飞行</h3>
+                <p>选择起降机场、机型与日期，提交飞行计划</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <span>&copy; 2026 寰宇航空 · EFB 电子飞行包</span>
+        </div>
+    </footer>
+
+    <!-- 全局脚本（导航栏交互、toast 等） -->
+    <script src="/js/script.js"></script>
+</body>
+</html>

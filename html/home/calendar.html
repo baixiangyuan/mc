@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寰宇航空 - 活动日历</title>
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/pic/logo.JPG" rel="icon">
+</head>
+<body>
+    <div class="global-grid"></div>
+
+    <!-- 导航栏（复用已有样式） -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="/index.html" class="nav-logo">
+                <span class="nav-logo-text">寰宇航空<small>Unisky Airways</small></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/index.html">首页</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <section class="section" style="padding-top: 5rem;">
+        <div class="section-header">
+            <span class="section-label">📅 活动日历</span>
+            <h2 class="section-title">近期连飞 & 管制活动</h2>
+            <p class="section-desc">点击日期查看详情，标记日有活动</p>
+        </div>
+
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button class="calendar-nav" id="prevMonth" aria-label="上一月">◀</button>
+                <h3 class="calendar-month-year" id="currentMonthYear">2026年7月</h3>
+                <button class="calendar-nav" id="nextMonth" aria-label="下一月">▶</button>
+            </div>
+            <div class="calendar-weekdays">
+                <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+            </div>
+            <div class="calendar-days" id="calendarDays"></div>
+            <div class="event-panel" id="eventPanel">
+                <h4>📌 <span id="eventDateLabel">选择日期查看活动</span></h4>
+                <ul id="eventList" class="event-list"></ul>
+            </div>
+        </div>
+    </section>
+    <!-- 引入主站全局脚本（保留导航栏交互等） -->
+    <script src="/js/script.js"></script>
+    <!-- 引入活动日历专用脚本 -->
+    <script src="/js/calendar.js"></script>
+</body>
+</html>

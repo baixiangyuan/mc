@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寰宇航空 - 航图查询</title>
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/pic/logo.JPG" rel="icon">
+</head>
+<body>
+    <div class="global-grid"></div>
+
+    <!-- 导航栏（与全站一致） -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="../../index.html" class="nav-logo">
+                <span class="nav-logo-text">寰宇航空<small>Unisky Airways</small></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../index.html">首页</a></li>
+                <li><a href="../../index.html#services">核心服务</a></li>
+                <li><a href="chart.html" class="active">航图查询</a></li>
+                <li><a href="../../index.html#resources">资源库</a></li>
+                <li><a href="https://www.kyfly.online" class="nav-cta">连接服务器</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 5rem;">
+        <div class="section-header">
+            <span class="section-label">🗺️ 航图查询</span>
+            <h2 class="section-title">Chartfox 全球航图</h2>
+            <p class="section-desc">输入 ICAO 机场代码（如 ZBAA、KJFK、EGLL）</p>
+        </div>
+
+        <div class="chart-search-box">
+            <input type="text" id="icaoInput" placeholder="请输入 ICAO 代码" maxlength="4" autofocus>
+            <button id="searchBtn" class="btn btn-primary">🔍 查询</button>
+        </div>
+
+        <div class="chart-iframe-container" id="iframeContainer">
+            <div class="loading-msg">输入机场代码后点击查询</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <span>&copy; 2026 寰宇航空 · 航图数据来自 Chartfox</span>
+        </div>
+    </footer>
+
+    <!-- 全局脚本（导航、toast 等） -->
+    <script src="../../js/script.js"></script>
+    <!-- 航图查询逻辑 -->
+    <script src="../../js/chart.js"></script>
+</body>
+</html>

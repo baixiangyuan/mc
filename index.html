@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KY飞行平台 | 寰宇航空 - 管制 · 连飞 · 资源分享</title>
+    <!-- 引入外部CSS -->
+    <link href="/css/styles.css" rel="stylesheet">
+	<link href="/pic/logo.JPG" rel="icon">
+</head>
+<body>
+    <div class="global-grid"></div>
+
+    <!-- ==================== 导航栏 ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="nav-logo">
+                <span class="nav-logo-text">KY空翼模拟飞行连飞平台&寰宇航空<small>Unisky Airways & KY FLY</small></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#services">核心服务</a></li>
+                <li><a href="#online">连飞中心</a></li>
+                <li><a href="#resources">资源库</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="https://www.kyfly.online" class="nav-cta">连接服务器</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== 英雄区 ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-radar"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot dot-pulse"></span> 服务器在线 · v1.0.0.
+            </div>
+            <h1 class="hero-title">
+                连接<span class="highlight">虚拟天空</span><br>从这里开始
+            </h1>
+            <p class="hero-subtitle">
+                专业的模拟飞行管制服务、全球连飞网络、丰富资源分享——加入 Unisky Airways和KY模拟飞行平台，与万千飞友一起探索无限空域。
+            </p>
+            <div class="hero-actions">
+                <a href="https://www.kyfly.online" class="btn btn-primary btn-lg">
+                    <span class="btn-icon">📡</span> 立即连飞
+                </a>
+                <a href="#servers" class="btn btn-outline btn-lg">
+                    <span class="btn-icon">📋</span> 了解服务
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+            <span class="scroll-arrow">↓</span>
+        </div>
+    </section>
+
+    <!-- ==================== 核心服务区 ==================== -->
+    <section class="section" id="services">
+        <div class="section-header">
+            <span class="section-label">核心服务</span>
+            <h2 class="section-title">专业虚拟航空及连飞生态</h2>
+            <p class="section-desc">为模拟飞行爱好者提供一站式管制、连飞与资源支持。</p>
+        </div>
+        <div class="services-grid">
+            <!-- 管制服务卡片 -->
+            <div class="service-card card-hover" data-modal="modal-atc">
+                <div class="service-icon">
+                    <span class="icon-circle">🎧</span>
+                </div>
+                <h3 class="service-title">管制服务</h3>
+                <p class="service-desc">真实空域模拟，专业管制员团队提供从放行到区调的全席位服务，严格遵循真实飞行规则。</p>
+                <div class="service-status">
+                    <span class="status-indicator status-online"></span>
+                    <span class="status-text">当前在线管制员：<strong id="atcCount">None</strong> 人</span>
+                </div>
+                <div class="service-footer">
+                    <span class="tag tag-sm tag-primary">ATC</span>
+                    <span class="tag tag-sm tag-outline">全席位</span>
+                </div>
+            </div>
+
+            <!-- 连飞服务卡片 -->
+            <div class="service-card card-hover" data-modal="modal-network">
+                <div class="service-icon">
+                    <span class="icon-circle">🌐</span>
+                </div>
+                <h3 class="service-title">连飞服务</h3>
+                <p class="service-desc">低延迟全球连飞网络，支持MSFS、X-Plane、P3D，实时交通显示与语音通信。</p>
+                <div class="service-status">
+                    <span class="status-indicator status-online"></span>
+                    <span class="status-text">当前在线飞行员：<strong id="pilotCount">None</strong> 人</span>
+                </div>
+                <div class="service-footer">
+                    <span class="tag tag-sm tag-primary">网络</span>
+                    <span class="tag tag-sm tag-outline">Swift/VPilot</span>
+                </div>
+            </div>
+
+            <!-- 资源分享卡片 -->
+            <div class="service-card card-hover" data-modal="modal-resource">
+                <div class="service-icon">
+                    <span class="icon-circle">📦</span>
+                </div>
+                <h3 class="service-title">资源分享</h3>
+                <p class="service-desc">丰富的航图、机场地景、机模涂装、飞行计划模板，社区成员持续贡献，免费获取。</p>
+                <div class="service-status">
+                    <span class="status-indicator status-online"></span>
+                    <span class="status-text">资源总数：<strong>1,280+</strong> 个</span>
+                </div>
+                <div class="service-footer">
+                    <span class="tag tag-sm tag-primary">资源</span>
+                    <span class="tag tag-sm tag-outline">免费下载</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ==================== 全球时间面板 ==================== -->
+    <div class="section" id="online" style="padding-top:0;">
+        <div class="time-panel">
+            <div class="time-panel-header">
+                <span>全球时间</span>
+            </div>
+            <div class="time-panel-grid">
+                <!-- 日期与UTC -->
+                <div class="time-card time-card-main">
+                    <div class="time-card-label">当前日期</div>
+                    <div class="time-card-value" id="currentDate">---</div>
+                    <div class="time-card-sub" id="currentWeekday">---</div>
+                </div>
+                <div class="time-card time-card-main">
+                    <div class="time-card-label">UTC 世界协调时</div>
+                    <div class="time-card-value" id="utcTime">--:--:--</div>
+                    <div class="time-card-sub">协调世界时</div>
+                </div>
+
+                <!-- 热门城市当地时区 -->
+                <div class="time-card">
+                    <div class="time-card-city">🇨🇳 北京</div>
+                    <div class="time-card-time" id="timeBeijing">--:--</div>
+                    <div class="time-card-offset">UTC+8</div>
+                </div>
+                <div class="time-card">
+                    <div class="time-card-city">🇺🇸 纽约</div>
+                    <div class="time-card-time" id="timeNewYork">--:--</div>
+                    <div class="time-card-offset">UTC-5</div>
+                </div>
+                <div class="time-card">
+                    <div class="time-card-city">🇬🇧 伦敦</div>
+                    <div class="time-card-time" id="timeLondon">--:--</div>
+                    <div class="time-card-offset">UTC+1</div>
+                </div>
+                <div class="time-card">
+                    <div class="time-card-city">🇯🇵 东京</div>
+                    <div class="time-card-time" id="timeTokyo">--:--</div>
+                    <div class="time-card-offset">UTC+9</div>
+                </div>
+                <div class="time-card">
+                    <div class="time-card-city">🇦🇪 迪拜</div>
+                    <div class="time-card-time" id="timeDubai">--:--</div>
+                    <div class="time-card-offset">UTC+4</div>
+                </div>
+                <div class="time-card">
+                    <div class="time-card-city">🇦🇺 悉尼</div>
+                    <div class="time-card-time" id="timeSydney">--:--</div>
+                    <div class="time-card-offset">UTC+10</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==================== 资源分享区 ==================== -->
+    <section class="section" id="resources">
+        <div class="section-header">
+            <span class="section-label">资源库</span>
+            <h2 class="section-title">社区共享资源</h2>
+            <p class="section-desc">精选航图、地景、涂装及工具，助力你的每一次飞行。</p>
+        </div>
+        <div class="resources-grid">
+            <a href="html/tools/chart.html" class="resource-card card-hover">
+                <div class="resource-icon">🗺️</div>
+                <h4>航图库</h4>
+                <p>全球航图查询服务~</p>
+                <span class="resource-badge">实用工具</span>
+            </a>
+            <a href="#" class="resource-card card-hover">
+                <div class="resource-icon">🏙️</div>
+                <h4>机场地景</h4>
+                <p>MSFS / XP 地景</p>
+                <span class="resource-badge">资源分享</span>
+            </a>
+            <a href="#" class="resource-card card-hover">
+                <div class="resource-icon">🎨</div>
+                <h4>机模涂装</h4>
+                <p>Unisky 专属涂装包</p>
+                <span class="resource-badge">资源分享</span>
+            </a>
+            <a href="/html/tools/efb.html" class="resource-card card-hover">
+                <div class="resource-icon">📋</div>
+                <h4>电子EFB</h4>
+                <p>推荐！！！</p>
+                <span class="resource-badge">实用工具</span>
+            </a>
+            <a href="#" class="resource-card card-hover">
+                <div class="resource-icon">📘</div>
+                <h4>教程文档</h4>
+                <p>管制/飞行入门指南</p>
+                <span class="resource-badge">新手教程</span>
+            </a>
+            <a href="#" class="resource-card card-hover">
+                <div class="resource-icon">🔧</div>
+                <h4>工具插件</h4>
+                <p>实用插件</p>
+                <span class="resource-badge">实用工具</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================== 公告/新闻区 ==================== -->
+    <section class="section bg-light" style="max-width:100%;padding-left:2rem;padding-right:2rem;">
+        <div style="max-width:1300px;margin:0 auto;">
+            <div class="section-header">
+                <span class="section-label">最新动态</span>
+                <h2 class="section-title">社区公告与新闻</h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-card card-hover">
+                    <div class="news-date">2026-06-15</div>
+                    <h4>暑期连飞活动即将开启</h4>
+                    <p>7月1日起，将举办主题连飞活动，参与即有机会获得专属奖励。</p>
+                </article>
+                <article class="news-card card-hover">
+                    <div class="news-date">2026-06-10</div>
+                    <h4>管制培训新课程上线</h4>
+                    <p>针对新手管制员的基础培训课程现已开放，包含视频教程和模拟考核。</p>
+                </article>
+                <article class="news-card card-hover">
+                    <div class="news-date">2026-06-05</div>
+                    <h4>服务器升级维护通知</h4>
+                    <p>本站正在持续更新中......</p>
+                </article>
+                <article class="news-card card-hover">
+                    <div class="news-date">2026-06-28</div>
+                    <h4>连飞基金筹集</h4>
+                    <p>由于维护连飞服务器需要大量资金，仅凭个人难以长期运转，希望各位有能力的用户能帮帮我们，您的每一份爱心都是我们继续维护下的动力</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 快速链接区 ==================== -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label">快速入口</span>
+            <h2 class="section-title">常用功能直达</h2>
+        </div>
+        <div class="quick-links-grid">
+            <a href="html/home/calendar.html" class="quick-link-card card-hover">
+                <span class="quick-link-icon">📅</span>
+                <span class="quick-link-text">活动日历</span>
+            </a>
+            <a href="https://qm.qq.com/q/2qrfoKT1h2" class="quick-link-card card-hover">
+                <span class="quick-link-icon">💬</span>
+                <span class="quick-link-text">	QQ群（寰宇航空）</span>
+            </a>
+            <a href="https://qm.qq.com/q/MUs0g3KlWy" class="quick-link-card card-hover">
+                <span class="quick-link-icon">💬</span>
+                <span class="quick-link-text">	QQ群（KY连飞平台）</span>
+            </a>
+            <a href="#" class="quick-link-card card-hover">
+                <span class="quick-link-icon">📊</span>
+                <span class="quick-link-text">职位一览</span>
+            </a>
+            <a href="#" class="quick-link-card card-hover">
+                <span class="quick-link-icon">🏆</span>
+                <span class="quick-link-text">排行榜</span>
+            </a>
+            <a href="#" class="quick-link-card card-hover">
+                <span class="quick-link-icon">📝</span>
+                <span class="quick-link-text">手册</span>
+            </a>
+            <a href="#" class="quick-link-card card-hover">
+                <span class="quick-link-icon">🎓</span>
+                <span class="quick-link-text">培训中心</span>
+            </a>
+            <a href="/html/home/sponsor.html" class="quick-link-card card-hover">
+                <span class="quick-link-icon">💴</span>
+                <span class="quick-link-text">赞助中心</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================== 页脚 ==================== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>Unisky Airways</h5>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">团队成员</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">合作伙伴</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>管制中心</h5>
+                <ul>
+                    <li><a href="#">管制培训</a></li>
+                    <li><a href="#">管制名单</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>连飞网络</h5>
+                <ul>
+                    <li><a href="#">连接指南</a></li>
+                    <li><a href="#">服务器状态</a></li>
+                    <li><a href="#">语音设置</a></li>
+                    <li><a href="#">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>社区</h5>
+                <ul>
+                    <li><a href="#">论坛</a></li>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">活动日历</a></li>
+                    <li><a href="#">飞友墙</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 KY空翼模拟飞行连飞平台&Unisky Airways 寰宇航空 版权所有</span>
+            <span>🛜 虚实无界，自在翱翔</span>
+        </div>
+    </footer>
+
+    <!-- ==================== 模态框：管制服务 ==================== -->
+    <div class="modal-overlay" id="modal-atc">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>🎧 管制服务详情</h3>
+                <button class="modal-close" data-close>&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>提供全空域ATC模拟，包括以下席位：</p>
+                <ul class="modal-list">
+                    <li><span class="tag tag-sm tag-primary">DEL</span> 放行许可</li>
+                    <li><span class="tag tag-sm tag-secondary">GND</span> 地面管制</li>
+                    <li><span class="tag tag-sm tag-accent">TWR</span> 塔台</li>
+                    <li><span class="tag tag-sm tag-warning">APP</span> 进近</li>
+                    <li><span class="tag tag-sm tag-danger">CTR</span> 区调</li>
+                </ul>
+                <p class="text-muted mt-2">严格遵循真实飞行规则，由经验丰富的管制员团队提供服务。</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-sm btn-outline-dark" data-close>关闭</button>
+                <button class="btn btn-sm btn-primary">预订席位</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 模态框：连飞服务 ==================== -->
+    <div class="modal-overlay" id="modal-network">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>🌐 连飞服务详情</h3>
+                <button class="modal-close" data-close>&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>支持以下模拟器平台：</p>
+                <div class="platform-icons">
+                    <span class="platform-badge">MSFS 2020/2024</span>
+                    <span class="platform-badge">X-Plane 11/12</span>
+                    <span class="platform-badge">P3D v5/v6</span>
+					<span class="platform-badge">Real Flight Simulator</span>
+					<span class="platform-badge">Infinite Flight</span>
+                </div>
+                <p class="text-muted mt-2">通过 Swift 客户端连接至 Unisky 连飞服务器。[手游玩家正在努力适配]</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-sm btn-outline-dark" data-close>关闭</button>
+                <button class="btn btn-sm btn-primary">连接指南</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 模态框：资源分享 ==================== -->
+    <div class="modal-overlay" id="modal-resource">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>📦 资源分享详情</h3>
+                <button class="modal-close" data-close>&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>资源库包含以下类别：</p>
+                <div class="resource-tags">
+                    <span class="tag tag-primary">航图</span>
+                    <span class="tag tag-secondary">地景</span>
+                    <span class="tag tag-accent">涂装</span>
+                    <span class="tag tag-warning">飞行计划</span>
+                    <span class="tag tag-danger">工具插件</span>
+                    <span class="tag tag-outline">教程文档</span>
+                </div>
+                <p class="text-muted mt-2">所有资源均来自网络，免费下载使用(仅限个人技术交流)。</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-sm btn-outline-dark" data-close>关闭</button>
+                <button class="btn btn-sm btn-primary">浏览资源库</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 回到顶部按钮 ==================== -->
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+    <!-- ==================== Toast通知容器 ==================== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- 引入外部JS -->
+    <script src="/js/script.js"></script>
+</body>
+</html>
