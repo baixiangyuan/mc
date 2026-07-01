@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;background-color:black;" lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="description" content="在浏览器里玩MC" />
+		<meta name="keywords" content="mc.bxya.top, mc.bxya.top, mc.js, eaglercraft, minecraft, webmc" />
+		<title>MCJS 1.8.8 WASM</title>
+		<link type="image/png" rel="shortcut icon" href="https://mc.bxya.top/favicon.png" />
+		<script type="text/javascript" src="1.8.8wasm/bootstrap.js"></script>
+		<script type="text/javascript">
+			"use strict";
+			window.alert(`【MCJS重要公告】请自觉遵守社区规范
+
+亲爱的用户，本站近期因部分用户滥用平台服务而正面临巨大的生存危机（play.mc.bxya.top频繁被举报封禁）。
+
+在开始游戏前，请先确保您同意：
+
+1. 禁止以任何违规内容作为玩家ID用户名
+2. 禁止滥用公益P2P中继服务器
+3. 禁止加入任何可能有违规内容的多人游戏服务器
+4. 禁止在游戏聊天栏发送任何违规内容
+5. 禁止以其它游戏的名义恶意宣传而导致版权问题
+6. 禁止对游戏进行逆向破解或用于任何的商业用途
+7. 禁止二次倒卖收费，MCJS永久免费
+
+若您同意，可继续游戏，否则请关闭本网页。
+网站生存不易，发言前请三思。谢谢配合！
+
+请用户放心，本网站是纯静态HTML网站，我们不会收集或上传任何的用户信息，更不可能是诈骗网站！
+MCJS严格遵守您所在地的法律法规，MCJS上不会有任何的诈骗等违规内容，MCJS永久免费不会向您收费！若本网站已被劫持篡改请立即关闭并切换镜像站（备用路线）！`);
+			window.addEventListener("load", function() {
+				if(window.location.href.indexOf("file:") === 0) {
+					alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");
+				}else {
+					var relayId = 2;
+					window.eaglercraftXOpts = {
+						demoMode: false,
+						container: "game_frame",
+						localesURI: "lang/",
+						assetsURI: "assets.epw",
+						lang: "zh_CN",
+						worldsDB: "worlds",
+						logInvalidCerts: false,
+						crashOnUncaughtExceptions: false,
+						allowUpdateDL: false,
+						allowFNAWSkins: false,
+						allowVoiceClient: false,
+						checkRelaysForUpdates: false,
+						enableMinceraft: false,
+						showBootMenuOnLaunch: false,
+						allowBootMenu: false,
+						relays: [
+							{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId === 0 },
+							{ addr: "wss://relay.lax1dude.net/", comment: "lax1dude relay #2", primary: relayId === 1 },
+							{ addr: "wss://relay.shhnowisnottheti.me/", comment: "ayunami relay #1", primary: relayId === 2 }
+						]
+					};
+					var q = window.location.search;
+					if((typeof q === "string") && q[0] === "?" && (typeof window.URLSearchParams !== "undefined")) {
+						q = new window.URLSearchParams(q);
+						var s = q.get("server");
+						if(s) window.eaglercraftXOpts.joinServer = s;
+					}
+					main();
+				}
+			});
+		</script>
+	</head>
+	<body style="margin:0px;width:100%;height:100%;overflow:hidden;background-color:black;" id="game_frame"><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "320df8b1652c43f5956a82109dec39e6"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>
